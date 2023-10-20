@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<html>
+<head style="margin-left = 0">
+    @Styles.Render("~/Content/Home.css")
+</head>
+<body style="margin-left = 0">
+    <input type="checkbox" id="check" display="none">
+    <label for="check" style="padding = 1 margin-left = 0">
+        <img width="30px" src="~/Content/imagens/filtro.png" style="padding-left = 1">
+    </label>
+    <nav>
+        <ul>
+            <li>@Html.ActionLink("Relatório", "Index", "Home")</li>
+        </ul>
+    </nav>
+</body>
+</html>

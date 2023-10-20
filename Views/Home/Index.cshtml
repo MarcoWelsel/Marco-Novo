@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br>
+<table>
+    <tr>
+        <td style="padding-top:5px"><font face size="3">Relatório</font></td>
+    </tr>
+</table>
+<br>
+
+@*TITULO*@
+
+<html>
+<body bottonmargin="0" rightmargin="0" leftmargin="0" topmargin="0">
+    <input type="button" value="Filtro" onclick="javascript: AbrirDivFiltro();">
+    <table width="100%" height="100%" border="0" cellpadding="1" cellspacing="0" align="center" bgcolor="silver">
+        <tr heigth="0" bgcolor="gray" aling="center">
+            <td align="center"><font size="1" color="white"><b>ID</b></font></td>
+            <td align="center"><font size="1" color="white"><b>Nome</b></font></td>
+            <td align="center"><font size="1" color="white"><b>Endereço</b></font></td>
+            <td align="center"><font size="1" color="white"><b>Valores</b></font></td>
+            <td align="center"><font size="1" color="white"><b>Total</b></font></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+@*LISTA*@
+
+<html>
+<body bottonmargin="0" rightmargin="0" leftmargin="0" topmargin="0">
+    <table width="100%" border="0" cellpadding="1" cellspacing="0" bgcolor="silver">
+        <tr>
+            <td align="center"><font size="1" color="red"><b>Nenhum Item Encontrado</b></font></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<br>
+<br>
+
+<script>
+    function AbrirDivFiltro() {
+        document.getElementById("DivFiltro").style.display = "inline"
+    }
+
+    function FecharDivFiltro() {
+        document.getElementById("DivFiltro").style.display = "none"
+    }
+
+    function Voltar() {
+        document.location = "../Home/Home"
+    }
+</script>
+
+<html>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <input type="button" value="Voltar" onclick="javascript: Voltar();">
+            </td>
+        </tr>
+    </table>
+    <div class="DivFiltro" id="DivFiltro" name="DivFiltro" style="width:100%; position:absolute; display:none; top:1; z-index:6">
+        <div class="DivModal">
+            <table width="100%">
+                <tr>
+                    <td align="center"><font size="3">Filtro de Pesquisa</font></td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                        <font size="2">ID</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                        <font size="2">Nome</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                        <font size="2">Endereço</font>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td align="center">
+                        <input type="button" value="Filtrar" onclick="javascript: FecharDivFiltro();">
+                    </td>
+                    <td align="center">
+                        <input type="button" value="Fechar" onclick="javascript: FecharDivFiltro();">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
